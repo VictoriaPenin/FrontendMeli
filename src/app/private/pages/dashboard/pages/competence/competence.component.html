@@ -1,0 +1,108 @@
+<div class="principal" style="padding: 5px;">
+    <div class="buscador">
+        <div>
+            <mat-form-field class="example-form-field">
+                <mat-label>Buscar</mat-label>
+                <input matInput type="text" [(ngModel)]="value">
+                @if (value) {
+                  <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                }
+              </mat-form-field>
+              <button mat-fab color="primary" (click)="buscarDatos()" aria-label="Example icon button with a delete icon">
+                <mat-icon>search</mat-icon>
+              </button>
+        </div>
+        
+        
+          
+        
+    </div>
+    
+    <h1>{{productFilters?.seller?.nickname}}</h1>
+    @if (showSpinner && init) {
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <mat-spinner></mat-spinner>
+        </div>
+        
+    }
+    @if (init && !showSpinner) {
+        <div class="flitrosAplicados" style="display: flex;">
+            <div *ngFor="let key of obtenerClaves()">
+                <button mat-button color="primary">{{ parametros[key].name }} </button>>
+              </div>
+        </div>
+        
+        <div class="contenido">
+            <div class="filtros">
+               <!--  <div style="margin-bottom: 2px;">
+                    <mat-accordion>
+                        <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                               ordenar por:
+                             </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        @for (value of productFilters?.available_sorts; track $index) {
+                            <div>
+                                <button mat-button>{{ value.name }} </button>
+                            </div>
+                            
+                        }
+                    </mat-expansion-panel>
+                    </mat-accordion>
+                    </div> -->
+                @for (filtro of productFilters?.available_filters; track $index) {
+                    <div style="margin-bottom: 2px;">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true"
+                                                (closed)="panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        {{filtro.name}}
+                                     </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                
+                                    @for (value of filtro.values; track $index) {
+                                        <div>
+                                            <button mat-button (click)="agregarParametro(filtro.id,value.id,value.name,productFilters!.seller!.nickname)">{{ truncateString(value.name, 25) }} ({{ value.results }}) </button>
+                                        </div>
+                                        
+                                    }
+                                
+                            
+                            </mat-expansion-panel>
+                       </mat-accordion>
+                    </div>    
+                }
+               
+            </div>
+            <div class="paginado">
+                
+                 <div class="cartas">
+                    <ng-container *ngFor="let item of productFilters?.results; let i = index">
+                        <app-card-compe [item]="item"></app-card-compe>
+                      </ng-container>
+            </div>
+            <div class="botonesPag">
+                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle (click)="paginaAnterior(productFilters?.seller!.nickname)" value="" [disabled]="productFilters?.paging?.offset === 0"><</mat-button-toggle>
+                <!--<mat-button-toggle value="italic">1</mat-button-toggle> -->
+                
+              </mat-button-toggle-group>
+              <mat-button-toggle (click)="siguientePagina(productFilters?.seller!.nickname)" value="bold" [disabled]="hasNextpag( productFilters?.paging!.offset,productFilters?.paging!.total, productFilters?.paging!.limit)">></mat-button-toggle>
+              
+            </div>
+        
+            
+            </div>
+            
+        </div>
+    }@else {
+        
+    }
+</div>
+
+

@@ -1,0 +1,61 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  }
+
+  .custom-header-color {
+    background-color: #f2f2f2;
+  }
+
+  .mat-dialog-title {
+    text-align: center;
+  }
+
+  .mat-form-field {
+    margin: 10px;
+  }
+
+  .demo-table {
+    width: 100%;
+  }
+
+  .disablehover:hover {
+    background-color: transparent;
+  }
+
+  .cabecera-fila {
+    background-color: #f2f2f2;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+
+  .modal-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+
+  .modal-title {
+    margin: 0;
+  }
+
+  .modal-body {
+    padding: 10px;
+  }
+
+  .modal-footer {
+    background-color: #f2f2f2;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+

@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Editar Empleado</h2>
+<div mat-dialog-content>
+  <form #editEmployeeForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de Usuario:</mat-label>
+      <input matInput [(ngModel)]="editedEmoloyee.username" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña:</mat-label>
+      <input matInput [(ngModel)]="editedEmoloyee.password" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Repetir Contraseña:</mat-label>
+      <input matInput [(ngModel)]="editedEmoloyee.rePassword" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email:</mat-label>
+      <input matInput [(ngModel)]="editedEmoloyee.email" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre:</mat-label>
+      <input matInput [(ngModel)]="editedEmoloyee.nombre" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido:</mat-label>
+      <input matInput [(ngModel)]="editedEmoloyee.apellido"   >
+    </mat-form-field>
+
+    <!-- Otros campos de edición -->
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="warn" (click)="onCancelClick()">Cancelar</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>Guardar Cambios</button>
+</div>

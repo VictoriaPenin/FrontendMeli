@@ -1,0 +1,30 @@
+.contenido{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.titulo{
+    
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: fit-content;
+    padding: 50px;
+    border-radius: 2px;
+}
+.example-form{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    margin-top: 1rem;
+}

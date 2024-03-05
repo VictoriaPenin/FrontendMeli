@@ -1,0 +1,69 @@
+<div class="row flex-wrap card-container">
+  <mat-card *ngFor="let item of products" class="example-card col-md-3 col-12">
+    <mat-card-header class="d-flex justify-content-between">
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-subtitle>{{item.condition}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="d-flex flex-row">
+      <!-- Imagen a la izquierda del contenido -->
+      <div class="col-md-4 image-container">
+        <img mat-card-md-image src="{{item.image_url}}" alt="Image of the product">
+      </div>
+
+      <!-- Segunda caja -->
+      <div class="col-md-4">
+        <ul class="list-group">
+          <li class="list-group-item"><strong>MLA:</strong>{{item.id}}</li>
+          <li class="list-group-item"><strong>GTIN:</strong> {{item.gtin}}</li>
+          <li class="list-group-item"><strong>SKU:</strong>{{item.sku}}</li>
+          <li class="list-group-item" [ngClass]="{'itemActivo': item.status === 'active', 'itemPause': item.status === 'inactive'}">
+            {{item.status === 'active' ? 'Activo' : 'Desactivado'}}
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tercera caja -->
+      <div class="col-md-4">
+        <div class="col-md-4">
+          <strong>Precio:</strong> ${{item.price}}
+        </div>
+        <div class="col-md-4">
+          <strong>Vendidos:</strong>{{item.sold_quantity}}
+        </div>
+        <div class="col-md-4">
+          <strong>Gasto:</strong> ${{item.item_cost?.total_cost}}
+          <button class="invisible-button" mat-icon-button matTooltip="Abrir información detallada" matTooltipPosition="after" (click)="toggleDetails()">
+            <mat-icon>info</mat-icon>
+          </button>
+        </div>
+
+        <div class="col-md-12 mt-3" *ngIf="mostrarDetalles">
+          <ng-container *ngIf="item.item_cost">
+            <div class="cost-details">
+                <strong>Comisión:</strong>{{item.item_cost.comision_fee}}<br>
+                <strong>IBB:</strong>{{item.item_cost.iibb}}<br>
+                <strong>Envío:</strong>{{item.item_cost.shipping}}<br>
+                <strong>Costo de Compra:</strong>{{item.item_cost.replacement_cost}}
+              <hr>
+            </div>
+          </ng-container>
+        </div>
+        <div class="col-md-4">
+          <strong>Ganancia:</strong> ${{item.item_cost?.profit}}
+        </div>
+        <div class="col-md-4">
+          <strong>Disponibles:</strong> {{item.available_quantity}}
+        </div>
+      </div>
+
+
+    </mat-card-content>
+
+    <mat-card-footer>
+      <strong>Publicado el {{item.created_date_item}}</strong>
+       <!-- boton prueba -->
+       <button mat-button color="primary" (click)="goToItemView(item.id)">ver mas</button>
+    </mat-card-footer>
+  </mat-card>
+</div>

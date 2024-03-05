@@ -1,0 +1,94 @@
+<!--   <mat-card>
+        <mat-card-header>
+            <img mat-card-avatar src="/assets/img/Logo-GyL-color.png">
+            <mat-card-title>{{metricas?.nickname}}</mat-card-title>
+            @if(metricas?.power_seller_status === null){
+                <mat-card-subtitle>Usted no es MercadoLider</mat-card-subtitle>
+            }@else {
+                <mat-card-subtitle><span class="listynTipe">Mercadolíder {{metricas?.power_seller_status}}</span><span class="material-symbols-outlined" style="color: #00a650;">
+                    workspace_premium
+                    </span></mat-card-subtitle>
+            }
+            
+        </mat-card-header>
+        <mat-card-content>
+            <div style="display: flex; justify-content: center;">
+                <div style="width: 25%; margin: 5px;">
+                    <p style="font-size: x-large;">{{metricas?.transactions?.completed}}</p>
+                    <h3>Ventas</h3>
+                </div>
+                <div style="width: 25%; margin: 5px;">
+                    <p style="font-size: x-large;">{{metricas?.transactions?.canceled}}</p>
+                    <h3>Canceladas</h3>
+                </div>
+                <div style="width: 25%; margin: 5px;">
+                    <p style="font-size: x-large;">{{metricas?.transactions?.total}}</p>
+                    <h3>Total</h3>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center; flex-direction: column;
+            align-items: center;">
+                <div style="display: flex; justify-content: center; flex-direction: column;
+            align-items: center; width: 70%;">
+                <h3>Reputacion</h3>
+                <p>Periodo: {{metricas?.transactions?.period}}</p>
+                <ul class="reputationBlock">
+                    <li class="block level1"  [ngClass]="{ 'level1Win': metricas?.level_id === '1_red'|| metricas?.level_id === null}"></li>
+                    <li class="block level2"  [ngClass]="{ 'level2Win': metricas?.level_id === '2_orange' }"></li>
+                    <li class="block level3"  [ngClass]="{ 'level3Win': metricas?.level_id === '3_yellow' }"></li>
+                    <li class="block level4"  [ngClass]="{ 'level4Win': metricas?.level_id === '4_light_green' }"></li>
+                    <li class="block level5"  [ngClass]="{ 'level5Win': metricas?.level_id === '5_green' }"></li>
+                </ul>
+            </div>
+            </div>
+            
+        </mat-card-content>
+    </mat-card> -->
+<div class="card">
+    <div class="cabecera">
+        <div class="logo">
+            <img mat-card-avatar src="/assets/img/Logo-GyL-color.png">
+        </div>
+        <div class="titulos">
+            <h1>{{metricas?.nickname}}</h1>
+        @if(metricas?.power_seller_status === null){
+            <p>Usted no es MercadoLider</p>
+        }@else {
+            <p><span class="listynTipe">Mercadolíder {{metricas?.power_seller_status}}</span><span class="material-symbols-outlined" style="color: #00a650;">
+                workspace_premium
+                </span></p>
+        }
+        </div>  
+    </div>
+    <div class="cuerpo">
+        <div style="display: flex; justify-content: center;">
+            <div class="bloqueMetrica" >
+                <p style="font-size: x-large;">{{metricas?.transactions?.completed}}</p>
+                <h3>Ventas</h3>
+            </div>
+            <div class="bloqueMetrica">
+                <p style="font-size: x-large;">{{metricas?.transactions?.canceled}}</p>
+                <h3>Canceladas</h3>
+            </div>
+            <div class="bloqueMetrica">
+                <p style="font-size: x-large;">{{metricas?.transactions?.total}}</p>
+                <h3>Total</h3>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; flex-direction: column;
+            align-items: center;">
+                <div style="display: flex; justify-content: center; flex-direction: column;
+            align-items: center; width: 70%;">
+                <h3>Reputacion</h3>
+                <p>Periodo: {{metricas?.transactions?.period}}</p>
+                <ul class="reputationBlock">
+                    <li class="block level1"  [ngClass]="{ 'level1Win': metricas?.level_id === '1_red'|| metricas?.level_id === null}"></li>
+                    <li class="block level2"  [ngClass]="{ 'level2Win': metricas?.level_id === '2_orange' }"></li>
+                    <li class="block level3"  [ngClass]="{ 'level3Win': metricas?.level_id === '3_yellow' }"></li>
+                    <li class="block level4"  [ngClass]="{ 'level4Win': metricas?.level_id === '4_light_green' }"></li>
+                    <li class="block level5"  [ngClass]="{ 'level5Win': metricas?.level_id === '5_green' }"></li>
+                </ul>
+            </div>
+            </div>
+    </div>
+</div>

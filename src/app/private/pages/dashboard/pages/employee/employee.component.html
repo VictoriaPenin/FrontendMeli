@@ -1,0 +1,120 @@
+<div class="container">
+  <h1>Cargar Empleado</h1>
+  
+  <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)" class="my-form">
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Usuario:</mat-label>
+      <input matInput type="text" id="username" name="username" [(ngModel)]="newEmployee.username" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Nombre:</mat-label>
+      <input matInput type="text" id="name" name="Nombre" [(ngModel)]="newEmployee.name" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Apellido:</mat-label>
+      <input matInput type="text" id="lastname" name="Apellido" [(ngModel)]="newEmployee.lastname" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Email:</mat-label>
+      <input matInput type="email" id="email" name="email" [(ngModel)]="newEmployee.email" required>
+    </mat-form-field>
+   
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Contraseña:</mat-label>
+      <input matInput type="password" id="password" name="password" [(ngModel)]="newEmployee.password" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Confirmar Contraseña:</mat-label>
+      <input matInput type="password" id="rePassword" name="rePassword" [(ngModel)]="newEmployee.rePassword" required>
+    </mat-form-field>
+
+    
+    <!-- <mat-form-field appearance="fill" class="form-group">
+      <mat-label>Rol:</mat-label>
+      <mat-select id="rol" name="rol" [(ngModel)]="newEmployee.rol" required>
+        <mat-option value="vendedor">Vendedor</mat-option>
+        <mat-option value="cajero">Cajero</mat-option>
+        <mat-option value="administracion">Administración</mat-option>
+        <mat-option value="otro">Otro</mat-option>
+      </mat-select>
+    </mat-form-field> -->
+    <button mat-raised-button color="primary" type="submit" [disabled]="employeeForm.invalid">Agregar Empleado</button>
+  </form>
+</div>
+
+
+
+
+
+<div class="container">
+ 
+
+<h1>Empleados</h1>
+<div class="container">
+
+
+  <div style="display: flex; justify-content: flex-end;">
+    <button mat-raised-button color="primary" (click)="reloadPage()" style="display: flex; justify-content: flex-end;">Actualizar página</button>
+  </div>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="Username">
+    <th mat-header-cell *matHeaderCellDef> Usuario </th>
+    <td mat-cell *matCellDef="let employee"> {{employee.username}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Nombre">
+    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+    <td mat-cell *matCellDef="let employee"> {{employee.name}} </td>
+  </ng-container>
+
+  <!-- Lastname Column -->
+  <ng-container matColumnDef="Apellido">
+    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+    <td mat-cell *matCellDef="let employee"> {{employee.lastname}} </td>
+  </ng-container>
+
+  <!-- <ng-container matColumnDef="Rol">
+    <th mat-header-cell *matHeaderCellDef> Rol </th>
+    <td mat-cell *matCellDef="let employee"> {{employee.rol}} </td>
+  </ng-container> -->
+  <!-- SellerRefactor Column -->
+  <!-- <ng-container matColumnDef="sellerRefactor">
+    <th mat-header-cell *matHeaderCellDef> Seller Refactor </th>
+    <td mat-cell *matCellDef="let employee"> {{employee.sellerRefactor.name}} </td>
+  </ng-container> -->
+
+<!-- Actions Column -->
+<ng-container matColumnDef="Acciones">
+  <th mat-header-cell *matHeaderCellDef> Acciones </th>
+  <td mat-cell *matCellDef="let employee">
+    <button mat-icon-button (click)="onEdit(employee)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="openDeleteDialog(employee.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <!-- <button mat-mini-fab color="warn" (click)="onDelete(employee.id)">
+      <span class="material-symbols-outlined">delete</span>
+    </button> -->
+  </td>
+</ng-container>
+
+
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

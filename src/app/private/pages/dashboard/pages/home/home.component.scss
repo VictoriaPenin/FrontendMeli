@@ -1,0 +1,18 @@
+.contenedor{
+margin: 10px;
+
+}
+.cabeceraMetricas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 0;
+    flex-grow: 999;
+    gap: 1rem;
+    justify-content: space-between;
+
+}
+.bloque{
+    height: 100px;
+    width: 200px;
+    background-color: red;
+}

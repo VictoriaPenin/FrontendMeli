@@ -1,0 +1,54 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  overflow-x: hidden; /* Evitar la barra de desplazamiento horizontal en todo el cuerpo */
+}
+
+.container {
+  margin-right: auto; /* Alinea el contenedor a la derecha */
+  margin-left: auto;  /* Alinea el contenedor a la izquierda */
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pagination-container {
+  margin-top: 20px; /* Ajusta según sea necesario */
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+#searchButton {
+  margin-top: -20px;
+}
+
+.mb-3 .align-items-center {
+  margin-top: 0;
+  padding-top: 5px;
+  padding-bottom: 5px; /* Ajusta según sea necesario para espaciar el contenido */
+}
+
+mat-button-toggle-group {
+  margin-left: auto;
+}
+
+/* Agrega este estilo a tu hoja de estilos CSS */
+.mt-custom {
+  margin-top: 20px; /* Puedes ajustar el valor según tus necesidades */
+}
+
+

@@ -1,0 +1,114 @@
+.card{
+    background-color: white;
+}
+.cabecera{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo {
+    
+    width: 60px; /* Controla el ancho de la imagen */
+    height: 60px; /* Controla el alto de la imagen */
+    border-radius: 50%; /* Hace que el contenedor tenga forma redonda */
+    overflow: hidden; /* Recorta la imagen para que tenga la forma redonda */
+}
+  .logo img {
+    width: 100%; /* Hace que la imagen ocupe todo el espacio disponible dentro del contenedor redondo */
+    height: auto; /* Mantiene la proporción original de la imagen */
+}
+  .titulos{
+    display: flex;
+    flex-direction: column;
+}
+.cuerpo{
+
+}
+.bloqueMetrica{
+    width: 25%;
+    margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ul{
+    padding: 0;
+}
+.reputationBlock{
+box-sizing: border-box;
+display: block;
+height: auto;
+margin-left: -6px;
+overflow: hidden;
+width: 100%;
+}
+.block{
+    border-left: 6px solid #fff;
+    box-sizing:border-box;
+    float:left;
+    height:8px;
+    margin-top:2px;
+    width:20%;
+    list-style: none;
+
+}
+.level1{
+    background: #fff0f0;
+}
+.level1Win{
+    background: #ff0808;
+    height:12px;
+    margin:0;
+
+}
+.level2{
+    background: #fff5e8;
+}
+.level2Win{
+    background: #ff9100;
+    height:12px;
+    margin:0;
+
+}
+.level3{
+    background: #fffcda;
+}
+.level3Win{
+    background: #ffea00;
+    height:12px;
+    margin:0;
+
+}
+.level4{
+    background: #f1fdd7;
+}
+.level4Win{
+    background: #affd06;
+    height:12px;
+    margin:0;
+
+}
+.level5{
+    background: #89b68f;
+    
+}
+.level5Win{
+    background: #39b54a;
+    height:12px;
+    margin:0;
+}
+.listynTipe{
+    color: #00a650;
+    font-size:16px;
+    font-weight:500;
+}

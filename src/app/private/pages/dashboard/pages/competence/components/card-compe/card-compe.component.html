@@ -1,0 +1,65 @@
+<div class="bloque" >
+    <div [ngClass]="{'frontflipped': isFlipped, 'front': !isFlipped}">
+        <div class="imagen">
+            <img src="{{item?.thumbnail}}" alt="">
+        </div>
+        <div class="contentcard">
+            <h2 class="titulo">{{item?.title}}</h2>
+            <p><s>${{item?.original_price}}</s></p>
+            <p class="precioFinal">${{item?.price}} <span class="datoDescuetno">{{item?.original_price && item?.price ? calculardescuento(item!.original_price, item!.price)+'% OFF'  : ''}}</span></p>
+            @if (item?.accepts_mercadopago === true) {
+                <p class="datoDescuetno">mercado pago</p>
+            }
+            
+            
+        </div>
+        <div class="footerFront" style="display: flex; justify-content: flex-end;">
+            <button mat-mini-fab color="accent" aria-label="Example icon button with a menu icon" (click)="handleClick()">
+                <span class="material-symbols-outlined" style="display: flex;">
+                    arrow_forward
+                    </span>
+              </button>
+        </div>
+        
+    </div>
+    <div  [ngClass]="{'backflipped': isFlipped , 'back': !isFlipped}">
+        <div class="contedidoBack">
+            <div style="width: 100%; height: 100%; background-color: white;">
+                <h2>Envios:</h2>
+                @if (item?.shipping?.store_pick_up) {
+                    <p>Rerito por local: <span class="material-symbols-outlined" style="color: #00a650;">
+                        check
+                        </span></p>
+                }@else {
+                    <p>Rerito por local: <span class="material-symbols-outlined" style="color: red;">
+                        close
+                        </span></p>
+                }
+                @if (item?.shipping?.free_shipping) {
+                    <p>Envio Gratis: <span class="material-symbols-outlined" style="color: #00a650;">
+                        check
+                        </span></p>
+                }@else {
+                    <p>Envio Gratis: <span class="material-symbols-outlined" style="color: red;">
+                        close
+                        </span></p>
+                }
+                
+                
+                <p>tipo de logistica: {{normalizadorLogistica(item?.shipping!.logistic_type)}}</p>
+                <p>Modo: {{item?.shipping?.mode}}</p>
+            </div>
+            <mat-divider></mat-divider>
+            
+        </div>
+        <div class="footerback">
+            <button mat-mini-fab color="accent" aria-label="Example icon button with a menu icon" (click)="handleClick()">
+                <span class="material-symbols-outlined" style="display: flex;">
+                    arrow_back
+                    </span>
+              </button>
+            <a mat-raised-button href="{{item?.permalink}}" target="_blank">Link</a>
+        </div> 
+    </div>
+   
+</div>

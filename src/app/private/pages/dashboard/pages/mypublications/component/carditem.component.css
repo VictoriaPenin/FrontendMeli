@@ -1,0 +1,60 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.row.flex-wrap {
+  max-width: 100%;
+  overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+}
+
+.example-card-content {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.invisible-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.invisible-button mat-icon {
+  color: your-icon-color;
+}
+
+.card-container {
+  margin-left: 0px;  /* Ajusta según tus necesidades */
+  margin-right: 0px; /* Ajusta según tus necesidades */
+}
+
+
+mat-card {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+mat-card .mat-card-content {
+  max-height: 300px;
+  overflow: auto;
+}
+
+mat-card .list-group {
+  max-height: 200px;
+  overflow: auto;
+}
+
+@media (min-width: 576px) {
+  mat-card {
+    max-width: 48%;
+  }
+}
+
+@media (min-width: 768px) {
+  mat-card {
+    max-width: 32%;
+  }
+}
+
+
+

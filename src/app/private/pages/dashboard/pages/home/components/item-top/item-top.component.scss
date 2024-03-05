@@ -1,0 +1,22 @@
+
+.item {
+    background-color: #fff;
+    float: left;
+    margin: 0 10px 10px 0;
+    width: 205px;
+    padding: 10px;
+    height: 290px;
+}
+.item img {
+    width: 100%; /* Asegura que la imagen ocupa el 100% del contenedor */
+    height: 100%; /* Hace que la altura se ajuste automáticamente para mantener la proporción original */
+    
+    max-height: 150px;
+    
+    margin: auto;
+}
+.catalogo{
+    color: blue;
+    font-weight: bold;
+}
+  

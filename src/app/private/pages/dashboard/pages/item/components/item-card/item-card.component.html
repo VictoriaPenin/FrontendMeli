@@ -1,0 +1,44 @@
+<div class="cajaAcciones">
+    <span>{{actionHealth}}</span>
+</div>
+<div class="carta">
+    <div class="img">
+        <img src="{{data.image_url}}" alt="">
+    </div>
+    <div class="cabecera">
+        <div class="titulo">
+            <p>{{data.title}}</p>
+        </div>
+        <div class="subtitulos">
+            <p>ID: {{data.id}}</p>
+            <p>GTIN: {{data.gtin}}</p>
+            <p>SKU: {{data.sku}}</p>
+
+        </div>
+        <div class="atributos">
+            @if(data.catalog_product_id != null){
+                <p  class="atrCatalogo">CATALOGO</p>
+            }
+            @if(data.status === "active"){
+                <p class="atrActivo">Activo</p>
+            }
+            @if(data.status === "under_review"){
+                <p class="atrUnder">En revisión</p>
+            }
+            @if(data.status === "pause"){
+                <p class="atrPause">Pausado</p>
+            } 
+        </div>
+
+    </div>
+    <div class="cuerpo">
+        @if(data.health){
+            <div class="row">
+            <p class="health">HEALTH: {{(data.health*100)}}%</p>
+        </div>
+        }
+        
+            
+    </div>
+</div>
+

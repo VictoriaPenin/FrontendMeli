@@ -1,0 +1,17 @@
+<div style="background-color: white;">
+    <div style="text-align: center;">
+        <h2>Grafico de Ventas</h2>
+    </div>
+    
+    <div style=" display: flex; justify-content: center;">
+        <canvas baseChart
+      [type]="'pie'"
+      [datasets]="pieChartDatasets"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [plugins]="pieChartPlugins"
+      [legend]="pieChartLegend">
+    </canvas>
+      </div>
+      
+</div>

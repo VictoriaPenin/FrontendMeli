@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Más vendidos en Mercado Libre</mat-card-title>
+        <mat-card-subtitle>Por categoria</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+        <mat-form-field>
+            <mat-label>Categoria</mat-label>
+            <mat-select (selectionChange)="onCategorySelectionChange($event.value)">
+              @for (categoria of categories; track categoria) {
+                <mat-option [value]="categoria.id">{{categoria.name}}</mat-option>
+              }
+            </mat-select>
+        </mat-form-field>
+        <div>
+            @if(spinnerTopItem){
+                <mat-spinner></mat-spinner>
+            }
+            
+            <div style="display: flex; overflow-x: auto;">
+            @for (item of topItems; track $index) {
+                <app-item-top [item]="item" style=" margin-left: 10px;"></app-item-top>
+            }
+            </div> 
+        </div>
+        
+    </mat-card-content>
+</mat-card>

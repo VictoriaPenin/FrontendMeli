@@ -1,0 +1,32 @@
+.buscador{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenido{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.filtros{
+    flex-basis: 23rem;
+    flex-grow: 1;
+    margin-left: 4px;
+}
+
+
+.paginado{
+    flex-basis: 0;
+    flex-grow: 999;
+}
+.cartas{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.botonesPag{
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,73 @@
+.bloque{
+    position: relative;
+    margin: 3px;
+    height: 500px;
+    width: 300px;
+}
+.bloque > div{
+  position: absolute;  
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 1s;
+}
+.frontflipped {
+  background-color: white;
+  transform:  rotateY(180deg);
+ 
+}
+ .backflipped{
+  background-color: white;
+  transform:  rotateY(360deg);
+}
+.bloque .front{
+  background-color: white;
+  transform: rotateY(0deg);
+}
+
+.bloque .back{
+  background-color: white;
+  transform:  rotateY(180deg);
+}
+
+
+.imagen{
+    background-color: green;
+    height: 300px;
+    width: 300px;
+}
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.contentcard{
+    padding: 5px;
+}
+.titulo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.datoDescuetno{
+  font-size: 18px;
+  color: #00a650;
+  font-weight: 400;
+}
+.precioFinal{
+  font-size: 30px;
+  font-weight: lighter;
+}
+.contedidoBack{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 85%;
+  padding: 10px; 
+}
+.footerback{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15%;
+}

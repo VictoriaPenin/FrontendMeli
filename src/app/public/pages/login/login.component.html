@@ -1,0 +1,31 @@
+<div class="fondo">
+    <mat-spinner diameter="50"color="accent" class="spinner" *ngIf="loading"></mat-spinner>
+    <div class="contenedor" *ngIf="!loading && firstOpcion" >
+        <form [formGroup]="form" (ngSubmit)="ingresar()" class="login-form">
+            <img src="/assets/img/Logo-GyL-color.png" alt="Logo de la empresa" style="width: 100px; margin-bottom: 30px;">
+        <mat-form-field class="inputPersonalizado">
+        <mat-label >Usuario</mat-label>
+        <input matInput formControlName="usuario" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field class="inputPersonalizado">
+        <mat-label>Contraseña</mat-label>
+        <input matInput autocomplete="off" type="password" formControlName="password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="boton" type="submit" [disabled]="form.invalid">Ingresar</button>
+        </form>
+    </div>
+    <div class="contenedor" *ngIf="!firstOpcion">
+        <h2>Selecione una opcion</h2>
+        <div>
+            <button mat-raised-button color="primary" class="botonOpcion"(click)="opcionalSeller()"><span class="material-symbols-outlined">
+                domain
+                </span>
+            <br>
+        <span>
+            Empresa
+        </span></button>
+            <button mat-raised-button color="primary" class="botonOpcion"><span class="material-symbols-outlined">group</span><br><span>Empleados</span></button>
+        </div>
+        <a style="margin-top: 5px; color: rgb(16, 110, 210);" routerLink="/register">¿Todavia no tienes una cuenta?</a>
+    </div>
+</div>

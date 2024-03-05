@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row justify-content-between mt-custom">
+    <div class="col-md-8 col-lg-6">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px" class="mb-3 align-items-center">
+        <form [formGroup]="searchForm" (ngSubmit)="filterProducts()" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="8px">
+          <mat-form-field class="mb-3 margin-left-10">
+            <mat-select placeholder="Tipo de búsqueda" formControlName="searchType">
+              <mat-option value="id">MLA</mat-option>
+              <mat-option value="sku">SKU</mat-option>
+              <mat-option value="publicationNumber">N° publicación</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="mb-3" style="width:40%">
+            <input matInput placeholder="Buscar" formControlName="searchTerm">
+          </mat-form-field>
+
+          <button type="submit" mat-raised-button color="primary" id="searchButton">
+            <mat-icon>search</mat-icon>Buscar
+          </button>
+        </form>
+
+        <mat-button-toggle-group [(ngModel)]="selectedOption" (change)="onRadioChange()">
+          <mat-button-toggle value="all">Todos</mat-button-toggle>
+          <mat-button-toggle value="catalogue">En catálogo</mat-button-toggle>
+        </mat-button-toggle-group>
+       </div>
+      </div>
+
+      <div class="col-md-8 col-lg-6">
+        <div fxLayout="row" fxLayoutAlign="space-between center" class="top-container">
+          <button type="button" mat-raised-button color="accent" (click)="updateItems()" class="margin-left-10 margin-bottom-10">
+            <mat-icon>refresh</mat-icon> Actualizar
+          </button>
+        </div>
+      </div>
+
+
+
+    <app-card-item [products]="products"></app-card-item>
+
+    <div class="pagination-container d-flex justify-content-center">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <mat-button-toggle [disabled]="currentPage === 0" (click)="previousPage()">Anterior</mat-button-toggle>
+        <mat-button-toggle>{{ currentPage + 1 }}</mat-button-toggle>
+        <mat-button-toggle [disabled]="currentPage >= (totalElements! / pageSize) - 1" (click)="nextPage()">Siguiente</mat-button-toggle>
+      </div>
+    </div>
+  </div>
+</div>

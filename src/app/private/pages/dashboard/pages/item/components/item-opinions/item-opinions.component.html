@@ -1,0 +1,64 @@
+<div class="componente">
+    <div class="zona metricas">
+        <div class="porcentajeglobal">
+            <p>{{data.rating_average}}</p>
+            <div>
+                 <div class="stars">
+                <span class="material-symbols-outlined " [ngClass]="{'starColor': data.rating_average >= 1, 'starColorDisable': data.rating_average < 1}" >star</span>
+                <span class="material-symbols-outlined " [ngClass]="{'starColor': data.rating_average >= 2, 'starColorDisable': data.rating_average < 2}">star</span>
+                <span class="material-symbols-outlined " [ngClass]="{'starColor': data.rating_average >= 3, 'starColorDisable': data.rating_average < 3}">star</span>
+                <span class="material-symbols-outlined " [ngClass]="{'starColor': data.rating_average >= 4, 'starColorDisable': data.rating_average < 4}">star</span>
+                <span class="material-symbols-outlined " [ngClass]="{'starColor': data.rating_average >= 5, 'starColorDisable': data.rating_average < 5}">star</span>
+            </div>
+            <p>{{data.paging.kvs_total}} calificaciones</p>
+            </div>
+           
+        </div>
+        <div class="cajaporcetanjeParticular">
+            <div class="oneStar">
+                <div class="barra">
+                    <mat-progress-bar mode="determinate" value="{{data.rating_levels.one_star}}"></mat-progress-bar>
+                <p>1 <span class="material-symbols-outlined"  style="margin-block: -2px; color: rgb(167, 167, 167);">star</span></p>
+                </div>
+                
+                
+            </div>
+            <div class="twoStar">
+                <div class="barra">
+                    <mat-progress-bar mode="determinate" value="{{data.rating_levels.two_star}}"></mat-progress-bar>
+                <p>2 <span class="material-symbols-outlined" style="margin-block: -2px; color: rgb(167, 167, 167);">star</span></p>
+                </div>
+                
+            </div>
+            <div class="treeStar">
+                <div class="barra">
+                    <mat-progress-bar mode="determinate" value="{{data.rating_levels.tree_star}}"></mat-progress-bar>
+                <p>3 <span class="material-symbols-outlined" style="margin-block: -2px; color: rgb(167, 167, 167);">star</span></p>
+            </div>
+                
+            </div>
+            <div class="fourStar">
+                <div class="barra">
+                    <mat-progress-bar mode="determinate" value="{{data.rating_levels.four_star}}"></mat-progress-bar>
+                <p>4 <span class="material-symbols-outlined" style="margin-block: -2px; color: rgb(167, 167, 167);">star</span></p>
+            </div>
+                
+            </div>
+            
+            <div class="fiveStar">
+                <div class="barra">
+                    <mat-progress-bar mode="determinate" value="{{data.rating_levels.five_star}}"></mat-progress-bar>
+                <p>5 <span class="material-symbols-outlined" style="margin-block: -2px; color: rgb(167, 167, 167);">star</span></p>
+            </div>
+                
+            </div>
+        </div>
+       
+    </div>
+    <div class="cajaOpiniones">
+        @for (item of data.reviews; track $index) {
+            <app-bodyopinions [reviews]="item"></app-bodyopinions>
+        }
+        </div>
+    </div>
+

@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Editar Proveedor</h2>
+<div mat-dialog-content>
+  <form #editSupplierForm="ngForm">
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="editedSupplier.id" disabled>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>C.U.I.T</mat-label>
+      <input matInput [(ngModel)]="editedSupplier.cuit" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Razon Social:</mat-label>
+      <input matInput [(ngModel)]="editedSupplier.supplierName" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Domicilio:</mat-label>
+      <input matInput [(ngModel)]="editedSupplier.domicilio" >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Telefono:</mat-label>
+      <input matInput [(ngModel)]="editedSupplier.telefono">
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Email:</mat-label>
+      <input matInput placeholder="Ex. mail@mail.com" [(ngModel)]="editedSupplier.email">
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Rubro:</mat-label>
+      <mat-select [(ngModel)]="editedSupplier.rubro" required>
+        <mat-option value="Herramientas Eléctricas">Herramientas Eléctricas</mat-option>
+        <mat-option value="Herramientas Manuales">Herramientas Manuales</mat-option>
+        <mat-option value="Hogar">Hogar</mat-option>
+        <mat-option value="Otros">Otros</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="warn" (click)="closeDialog()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="saveChanges()">Guardar Cambios</button>
+</div>

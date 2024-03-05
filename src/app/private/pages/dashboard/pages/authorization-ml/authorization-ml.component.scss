@@ -1,0 +1,17 @@
+.contenido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+.mensaje{
+    background-color: rgb(186, 248, 177);
+    color: rgb(2, 204, 19);
+    margin: 1rem;
+    padding: 1rem;
+    border: 6px;
+}
+.mensaje > h2{
+    margin: 0;
+}

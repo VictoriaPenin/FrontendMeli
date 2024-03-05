@@ -1,0 +1,38 @@
+<div class="fondo">
+    <div class="contenedor">
+        <div style="display: flex;"><a routerLink="/login">< atras</a></div>
+        
+        <!-- Formulario de registro -->
+        <form [formGroup]="form" (ngSubmit)="submitForm()" class="login-form">
+            <img src="/assets/img/Logo-GyL-color.png" alt="Logo de la empresa" style="width: 100px; margin-bottom: 30px;">
+            <h2>Registrarse</h2>
+
+            <!-- Campo de usuario -->
+            <mat-form-field class="inputPersonalizado">
+                <mat-label>Usuario</mat-label>
+                <input matInput formControlName="usuario" autocomplete="off">
+            </mat-form-field>
+
+            <!-- Campo de correo electrónico -->
+            <mat-form-field class="inputPersonalizado">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput formControlName="email" autocomplete="off">
+            </mat-form-field>
+
+            <!-- Campo de contraseña -->
+            <mat-form-field class="inputPersonalizado">
+                <mat-label>Contraseña</mat-label>
+                <input matInput autocomplete="off" type="password" formControlName="password">
+            </mat-form-field>
+
+            <!-- Campo de repetir contraseña -->
+            <mat-form-field class="inputPersonalizado">
+                <mat-label>Repetir Contraseña</mat-label>
+                <input matInput autocomplete="off" type="password" formControlName="rePassword">
+            </mat-form-field>
+
+            <!-- Botón de enviar -->
+            <button mat-raised-button color="primary" class="boton" type="submit" [disabled]="form.invalid">Ingresar</button>
+        </form>
+    </div>
+</div>

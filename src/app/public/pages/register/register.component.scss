@@ -1,0 +1,33 @@
+.fondo {
+    background-image: url('/assets/img/fondo-auth.png');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inputPersonalizado{
+    width: 70%;
+    height: 69px;
+}
+.boton{
+    height: 50px;
+    width: 70%;
+}

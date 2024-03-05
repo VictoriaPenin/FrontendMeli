@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-content>
+        <div class="item">
+        <img src="{{item?.imagen}}" alt="item" />
+        <h3>{{item?.name}}</h3>
+
+        <p>Price: <em>{{item?.price}}</em></p>
+        @if (item?.isCatalogo === "true") {
+            <Span class="catalogo">CATALOGO</Span>
+        }
+        
+    
+        </div>
+    </mat-card-content>
+    
+    <mat-card-actions align="end"><a mat-raised-button href="{{item?.url}}" target="_blank">Link</a></mat-card-actions>
+</mat-card>
